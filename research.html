@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research | Hyesu Im</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .toggle-abstract {
+      text-decoration: underline;
+      cursor: pointer;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .abstract-icon {
+      margin-left: 0.3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Hyesu Im</h1>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="research.html" class="active">RESEARCH</a>
+      <a href="cv.html">CV</a>
+    </nav>
+  </header>
+
+  <section id="research" style="max-width: 1200px; margin: auto; padding: 3rem; font-size: 1.1rem; line-height: 1.8;">
+    <h2>Research</h2>
+
+    <h3>Research Interests</h3>
+    <p>
+      Planning & Policy, Social Determinants of Health, Urban Infrastructure <br>
+      Causal Inference, Spatial Analysis
+    </p>
+
+    <h3>Working Papers</h3>
+
+    <p><strong>"Minority Political Representation and Park Development: Evidence from New York City"</strong> </p>
+    <p><a href="#" class="toggle-abstract">Abstract <span class="abstract-icon"></span></a></p>
+    <div class="abstract-content" style="display: none;">
+      Urban green space is a vital public good that promotes residents’ health and well-being, yet its distribution remains deeply unequal across racial and economic lines in the United States. While prior research has examined the roles of neighborhood characteristics and non-governmental actors in shaping park development, the influence of local political representation remains underexplored. This study investigates whether racial representation—defined as the alignment between the race of a city councilor and the predominant racial group in a neighborhood—is associated with increased park development. Using panel data from New York City between 2002 and 2017, I employ two-way fixed effects models to estimate the association between racial representation and changes in parkland. Focusing on Black and Asian neighborhoods—where park disparities are especially pronounced in New York City—I find that representation by Black councilors is significantly associated with greater park development in Black neighborhoods, whereas no such effect is observed in Asian neighborhoods. These findings suggest that while racial representation can enhance equity in public goods provision, its effects are group-specific and may depend on broader political and institutional contexts.
+    </div>
+    
+    <p><strong>"Neighborhood Change and Self-reported Health: Variations by Housing Tenure"</strong> </p>
+    <p><a href="#" class="toggle-abstract">Abstract <span class="abstract-icon"></span></a></p>
+    <div class="abstract-content" style="display: none;">
+      Neighborhoods are critical social determinants of health, yet the relationship between neighborhood socioeconomic change and health remains inconclusive due to the complexity of urban transformation and the heterogeneous experiences of residents. This study examines how three distinct dimensions of neighborhood change—increases in income, rent, and educational attainment—are associated with self-reported general health, and whether these associations vary by housing tenure. Using longitudinal data from the Panel Study of Income Dynamics, the research employs individual and year fixed-effects models to analyze neighborhood change and health outcomes spanning 2005 to 2019. Among renters, neighborhood rent increases are negatively associated with self-reported health, whereas neighborhood income growth is positively associated. In contrast, no significant associations between neighborhood change and health outcomes were observed for homeowners. These findings underscore the differential health implications of neighborhood upgrading, with renters particularly vulnerable to the market pressures of rising neighborhood rents. The results highlight the necessity of tenure-sensitive approaches in urban planning and policy—such as rent stabilization and rental assistance—to promote health equity in rapidly changing urban contexts. 
+    </div>
+
+    <p><strong>"New Park Development and Gentrification in New York City"</strong> </p>
+
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggles = document.querySelectorAll('.toggle-abstract');
+
+      toggles.forEach(function (toggle) {
+        const icon = toggle.querySelector('.abstract-icon');
+        if (icon) icon.textContent = '▾'; // initial: closed
+
+        toggle.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const content = this.parentElement.nextElementSibling;
+          const icon = this.querySelector('.abstract-icon');
+
+          if (!content || !icon) return;
+
+          const isHidden = content.style.display === 'none' || content.style.display === '';
+          content.style.display = isHidden ? 'block' : 'none';
+          icon.textContent = isHidden ? '▴' : '▾'; // ▴ when open, ▾ when closed
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
